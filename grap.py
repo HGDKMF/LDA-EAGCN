@@ -93,9 +93,7 @@ class prekong():
                     if graph_adj.loc[idex,jdex]:
                         node_att[0:, i, j] = [1,node_co_n[i]+node_co_n[j]]
 
-            # w = open('ss.txt','w',encoding='UTF-8')
-            #
-            # w.writelines(att_list)
+
             x_1.append([afm.tolist(),adj.tolist(),core_att.tolist(),nomal_att.tolist(),node_att.tolist(),ll_att.tolist(),dd_att.tolist()])
         return x_1,len(x_1)
     def Negative_co(self,negn):
@@ -188,7 +186,7 @@ class prekong():
         dissimlar = disinfo.index.values.tolist()
         for lcn in lncfile.values:  # 一个图
             lcn = lcn[0]
-            print(lcn)
+            
 
             afm = np.ones([2 * self.sn, self.fn], dtype=np.float32)
             core_att = np.zeros([2, 2 * self.sn, 2 * self.sn], dtype=np.float32)
@@ -242,9 +240,7 @@ class prekong():
                     if graph_adj.loc[idex, jdex]:
                         node_att[0:, i, j] = [1, node_co_n[i] + node_co_n[j]]
 
-            # w = open('ss.txt','w',encoding='UTF-8')
-            #
-            # w.writelines(att_list)
+      
             x_1.append(
                 [afm.tolist(), adj.tolist(), core_att.tolist(), nomal_att.tolist(), node_att.tolist(), ll_att.tolist(),
                  dd_att.tolist()])
@@ -461,4 +457,4 @@ def set_weight(y_all):
         weight_dic[key] = [5000/pos_dic[key], 5000/neg_dic[key]]
     return(weight_dic)
 
-    # a = disscore.iloc[np.random.choice(np.arange(len(disscore)), 5, False)]
+   
